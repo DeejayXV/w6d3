@@ -1,0 +1,139 @@
+$primary-color: #0e6cff;
+$secondary-color: #ff9700;
+$tertiary-color: #4caf50;
+$bg-hero: #640fc5;
+$text-color: rgb(255, 255, 255);
+$text-color2: black;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background-color: $primary-color;
+//   padding: 1em 0;
+display: flex;
+
+  img {
+    width: 100px;
+    margin-left: 3em;
+  }
+  
+  ul {
+    margin-left: 3em;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+
+
+        &:hover {
+          color: lighten($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background: $bg-hero ;
+  color: $text-color;
+  padding: 4em 2em;
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+  position: relative;
+  overflow: hidden;
+
+  & > * {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInMoveDown 0.8s ease-out forwards;
+  }
+
+  .headline {
+    max-width: 50%;
+padding-left: 3em;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+color: $text-color2;
+
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1em;
+max-width: 30em;
+    }
+  }
+
+  img {
+margin: 0 3em;
+width: 500px;
+  }
+
+  .buttons {
+
+    button {
+        display: flex;
+      padding: 0.8em 1.6em;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 1.5em 1em;
+      transition: transform 0.3s ease;
+      &:nth-child(1) { background-color: $secondary-color; }
+      &:nth-child(2) { background-color: $primary-color; }
+      &:nth-child(3) { background-color: $tertiary-color; }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: white;
+  padding: 2em;
+
+  .image-item {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: transparent;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    img {
+        width: 300px;
+    }
+  }
+}
+
+@keyframes fadeInMoveDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
